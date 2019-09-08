@@ -17,7 +17,7 @@ function Get-ModdbDlUrl {
 	[CmdletBinding()]
     Param
     (
-		[ValidatePattern('^https://www.moddb.com/downloads/start/\d+$')] [Parameter(Mandatory = $true)] [string] $srcURL
+		[ValidatePattern('^https://www.moddb.com/(?:downloads|addons)/start/\d+$')] [Parameter(Mandatory = $true)] [string] $srcURL
     )
     Begin
     {
@@ -26,10 +26,18 @@ function Get-ModdbDlUrl {
 	}
 	End
     {
-		$tokenURL = "($($srcURL.replace('start','mirror'))/\w+/\w+)"
+		# Write-Host $srcURL
+		if ($srcURL -like '*addons*') {
+			$filtered = $srcURL.replace('addons','downloads')
+		} else {
+			$filtered = $srcURL
+		}
+		# Write-Host $filtered
+		$tokenURL = "($($filtered.replace('start','mirror'))/\w+/\w+)"
 		$request = [System.Net.WebRequest]::Create($srcURL)
 		$response = $request.GetResponse().GetResponseStream()
 		$content = (New-Object System.IO.StreamReader $response).ReadToEnd()
+		# Write-Host $content
 		return (select-string -Input $content -Pattern $tokenURL).Matches[0].Value
 	}
 }
