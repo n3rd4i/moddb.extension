@@ -17,7 +17,7 @@ function Get-ModdbDlUrl {
 	[CmdletBinding()]
     Param
     (
-		[ValidatePattern('^https://www.moddb.com/(?:downloads|addons)/start/\d+$')] [Parameter(Mandatory = $true)] [string] $srcURL
+		[ValidatePattern('^https://www.moddb.com/(downloads|addons)/start/\d+$')] [Parameter(Mandatory = $true)] [string] $srcURL
     )
     Begin
     {

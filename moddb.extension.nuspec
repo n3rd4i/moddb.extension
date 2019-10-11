@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>moddb.extension</id>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <title>moddb.extension (Install)</title>
     <authors>n3rd4i</authors>
     <projectUrl>https://github.com/n3rd4i/moddb.extension.git</projectUrl>
@@ -14,8 +14,9 @@ This extension provides the ability to extract download url from moddb.com websi
     </description>
     <releaseNotes>
     Changelog:
-    * 1.1: added support for moddb.com addons links
-    * 1.0: Initial version
+    * 0.1.2: hotfix for addon links
+    * 0.1.1: added support for moddb.com addons links
+    * 0.1.0: Initial version
     </releaseNotes>
   </metadata>
   <files>
