@@ -2,22 +2,37 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>moddb.extension</id>
-    <version>0.1.2</version>
+    <version>0.1.3</version>
     <title>moddb.extension (Install)</title>
     <authors>n3rd4i</authors>
     <projectUrl>https://github.com/n3rd4i/moddb.extension.git</projectUrl>
+    <iconUrl>https://cdn.statically.io/img/upload.wikimedia.org/wikipedia/en/8/89/Mod_DB_logo.png</iconUrl>
     <projectSourceUrl>https://github.com/n3rd4i/moddb.extension.git</projectSourceUrl>
     <tags>moddb.extension moddb games</tags>
     <summary>Chocolatey extension for moddb.com website functions</summary>
     <description>
+
 This extension provides the ability to extract download url from moddb.com website for a specific Mod.
+
     </description>
     <releaseNotes>
     Changelog:
+    * 0.1.3: hotfix: adding missing dependency kb2919355
     * 0.1.2: hotfix for addon links
     * 0.1.1: added support for moddb.com addons links
     * 0.1.0: Initial version
     </releaseNotes>
+
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <dependencies>
+      <dependency id="kb2919355" />
+      <!-- <dependency id="" version="__MINIMUM_VERSION__" /> -->
+      <!-- <dependency id="" version="[__EXACT_VERSION__]" /> -->
+      <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /> -->
+      <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /> -->
+      <!-- <dependency id="chocolatey-core.extension" version="1.1.0" /> -->
+    </dependencies>
+
   </metadata>
   <files>
     <file src="extensions\**" target="extensions" />
